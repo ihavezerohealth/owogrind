@@ -10,14 +10,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/dankgrinder/dankgrinder/instance/scheduler"
+	"github.com/ihavezerohealth/owogrind/instance/scheduler"
 )
 
 const (
-	prayCmdValue      = "owo pray"
-	huntCmdValue      = "owo hunt"
-	shareBaseCmdValue = "owo give"
-	sellBaseCmdValue  = "owo sell"
+	prayCmdValue     = "owo pray"
+	huntCmdValue     = "owo hunt"
+	sellBaseCmdValue = "owo sell"
 )
 
 func sellCmdValue(amount, item string) string {
@@ -46,6 +45,7 @@ func (in *Instance) newCmds() []*scheduler.Command {
 			AwaitResume: true,
 		})
 	}
+	if in.Features.AutoSell
 
 	for _, cmd := range in.Features.CustomCommands {
 		// cmd.Value and cmd.Amount are not checked for correct values here

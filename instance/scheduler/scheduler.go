@@ -12,8 +12,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/dankgrinder/dankgrinder/config"
-	"github.com/dankgrinder/dankgrinder/discord"
+	"github.com/ihavezerohealth/owogrind/config"
+	"github.com/ihavezerohealth/owogrind/discord"
 	"github.com/sirupsen/logrus"
 )
 

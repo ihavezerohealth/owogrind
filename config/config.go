@@ -60,8 +60,9 @@ type Compat struct {
 }
 
 type Cooldown struct {
-	Hunt int `yaml:"owoh"`
-	Pray int `yaml:"pray"`
+	Hunt  int `yaml:"owoh"`
+	Pray  int `yaml:"pray"`
+	Share int `yaml:"share"`
 }
 
 type Features struct {
@@ -74,13 +75,6 @@ type Features struct {
 	Debug              bool            `yaml:"debug"`
 }
 
-type AutoShare struct {
-	Enable         bool `yaml:"enable"`
-	Fund           bool `yaml:"fund"`
-	MaximumBalance int  `yaml:"maximum_balance"`
-	MinimumBalance int  `yaml:"minimum_balance"`
-}
-
 type CustomCommand struct {
 	Value             string `yaml:"value"`
 	Interval          int    `yaml:"interval"`
@@ -89,9 +83,14 @@ type CustomCommand struct {
 }
 
 type AutoSell struct {
-	Enable   bool     `yaml:"enable"`
-	Interval int      `yaml:"interval"`
-	Items    []string `yaml:"items"`
+	Enable   bool    `yaml:"enable"`
+	Interval int     `yaml:"interval"`
+	Items    []Items `yaml:"items"`
+}
+
+type Items struct {
+	Item   string `yaml:"item"`
+	Amount int    `yaml:"amount"`
 }
 
 type Commands struct {

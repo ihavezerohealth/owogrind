@@ -11,7 +11,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/dankgrinder/dankgrinder/config"
+	"github.com/ihavezerohealth/owogrind/config"
 )
 
 // sec returns n as a time.Duration in seconds.

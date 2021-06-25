@@ -64,14 +64,8 @@ func validateFeatures(features Features) error {
 		}
 	}
 	if features.AutoShare.Enable {
-		if features.AutoShare.MinimumBalance < 0 {
-			return fmt.Errorf("auto-share minimum must be greater than or equal to 0")
-		}
-		if features.AutoShare.MaximumBalance < 0 {
-			return fmt.Errorf("auto-share maximum must be greater than or equal to 0")
-		}
-		if features.AutoShare.MinimumBalance > features.AutoShare.MaximumBalance {
-			return fmt.Errorf("auto-share minumum must be smaller than or equal to maximum")
+		if features.AutoShare.Amount <= 0 {
+			return fmt.Errorf("auto-share amount must be greater than 0")
 		}
 	}
 
@@ -79,10 +73,10 @@ func validateFeatures(features Features) error {
 		if cmd.Value == "" {
 			return fmt.Errorf("features.custom_commands[%v].value: no value", i)
 		}
-		if strings.Contains(cmd.Value, "pls shop") {
+		if strings.Contains(cmd.Value, "owo hunt") {
 			return fmt.Errorf("invalid custom command value: %v, this custom command is disallowed, use auto-gift instead", cmd.Value)
 		}
-		if strings.Contains(cmd.Value, "pls sell") {
+		if strings.Contains(cmd.Value, "owoh") {
 			return fmt.Errorf("invalid custom command value: %v, this custom command is disallowed, use auto-sell instead", cmd.Value)
 		}
 		if cmd.Amount < 0 {
