@@ -55,70 +55,23 @@ type override struct {
 }
 
 type Compat struct {
-	PostmemeOpts         []string `yaml:"postmeme"`
-	AllowedSearches      []string `yaml:"allowed_searches"`
-	SearchCancel         []string `yaml:"search_cancel"`
 	Cooldown             Cooldown `yaml:"cooldown"`
 	AwaitResponseTimeout int      `yaml:"await_response_timeout"`
-	AllowedScrambles     []string `yaml:"allowed_scrambles"`
-	DigCancel            []string `yaml:"dig_cancel"`
-	AllowedFTB           []string `yaml:"allowed_ftb"`
-	WorkCancel           []string `yaml:"work_cancel"`
-	AllowedScramblesWork []string `yaml:"allowed_scrambles_work"`
-	AllowedHangman       []string `yaml:"allowed_hangman"`
-	AllowedScramblesFish []string `yaml:"allowed_scrambles_fish"`
-	AllowedFishFTB       []string `yaml:"allowed_fish_ftb"`
-	FishCancel           []string `yaml:"fish_cancel"`
 }
 
 type Cooldown struct {
-	Beg       int `yaml:"beg"`
-	Fish      int `yaml:"fish"`
-	Hunt      int `yaml:"hunt"`
-	Postmeme  int `yaml:"postmeme"`
-	Search    int `yaml:"search"`
-	Highlow   int `yaml:"highlow"`
-	Blackjack int `yaml:"blackjack"`
-	Sell      int `yaml:"sell"`
-	Gift      int `yaml:"gift"`
-	Share     int `yaml:"share"`
-	Dig       int `yaml:"dig"`
-	Work      int `yaml:"work"`
-	Trivia    int `yaml:"trivia"`
+	Hunt int `yaml:"owoh"`
+	Pray int `yaml:"pray"`
 }
 
 type Features struct {
 	Commands           Commands        `yaml:"commands"`
 	CustomCommands     []CustomCommand `yaml:"custom_commands"`
-	AutoBuy            AutoBuy         `yaml:"auto_buy"`
 	AutoSell           AutoSell        `yaml:"auto_sell"`
-	AutoGift           AutoGift        `yaml:"auto_gift"`
-	AutoBlackjack      AutoBlackjack   `yaml:"auto_blackjack"`
 	AutoShare          AutoShare       `yaml:"auto_share"`
-	AutoTidepod        AutoTidepod     `yaml:"auto_tidepod"`
-	BalanceCheck       BalanceCheck    `yaml:"balance_check"`
 	LogToFile          bool            `yaml:"log_to_file"`
 	VerboseLogToStdout bool            `yaml:"verbose_log_to_stdout"`
 	Debug              bool            `yaml:"debug"`
-}
-
-type BalanceCheck struct {
-	Enable   bool `yaml:"enable"`
-	Interval int  `yaml:"interval"`
-}
-
-type AutoTidepod struct {
-	Enable              bool `yaml:"enable"`
-	Interval            int  `yaml:"interval"`
-	BuyLifesaverOnDeath bool `yaml:"buy_lifesaver_on_death"`
-}
-
-type AutoBlackjack struct {
-	Enable            bool                         `yaml:"enable"`
-	Priority          bool                         `yaml:"priority"`
-	Amount            int                          `yaml:"amount"`
-	PauseBelowBalance int                          `yaml:"pause_below_balance"`
-	LogicTable        map[string]map[string]string `yaml:"logic_table"`
 }
 
 type AutoShare struct {
@@ -128,24 +81,11 @@ type AutoShare struct {
 	MinimumBalance int  `yaml:"minimum_balance"`
 }
 
-type AutoGift struct {
-	Enable   bool     `yaml:"enable"`
-	Interval int      `yaml:"interval"`
-	Items    []string `yaml:"items"`
-}
-
 type CustomCommand struct {
 	Value             string `yaml:"value"`
 	Interval          int    `yaml:"interval"`
 	Amount            int    `yaml:"amount"`
 	PauseBelowBalance int    `yaml:"pause_below_balance"`
-}
-
-type AutoBuy struct {
-	FishingPole  bool `yaml:"fishing_pole"`
-	HuntingRifle bool `yaml:"hunting_rifle"`
-	Laptop       bool `yaml:"laptop"`
-	Shovel       bool `yaml:"shovel"`
 }
 
 type AutoSell struct {
@@ -155,15 +95,8 @@ type AutoSell struct {
 }
 
 type Commands struct {
-	Beg      bool `yaml:"beg"`
-	Postmeme bool `yaml:"postmeme"`
-	Search   bool `yaml:"search"`
-	Highlow  bool `yaml:"highlow"`
-	Fish     bool `yaml:"fish"`
-	Hunt     bool `yaml:"hunt"`
-	Dig      bool `yaml:"dig"`
-	Work     bool `yaml:"work"`
-	Trivia   bool `yaml:"trivia"`
+	Pray bool `yaml:"pray"`
+	Hunt bool `yaml:"hunt"`
 }
 
 type SuspicionAvoidance struct {
